@@ -1,0 +1,99 @@
+#root {
+    margin: 0 auto;
+    text-align: center;
+}
+.container {
+    width: 550px;
+    margin: auto;
+    padding: 1rem;
+    color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 350px;
+        max-width: 95%;
+        padding: 0;
+    }
+}
+
+nav {
+    color: white;
+    font-size: 1.8rem;
+    letter-spacing: 1rem;
+    display: flex;
+    margin-bottom: 2rem;
+    justify-content: space-between;
+}
+
+form {
+    margin-bottom: 2rem;
+}
+
+.input-field {
+    width: 100%;
+    padding: 1.2rem;
+    border-radius: 5px;
+    background-color: var(--card-color);
+    border: none;
+    font-size: 1rem;
+    color: var(--text-color);
+    box-shadow: 0 5px 10px 0 var(--box-shadow);
+    outline: none;
+}
+
+.todo-item {
+    width: 100%;
+    background-color: var(--card-color);
+    color: var(--text-color);
+    padding: 1.2rem 1.5rem 1rem 3rem;
+    border-bottom: 1px solid var(--divider-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    text-transform: capitalize;
+}
+.todo-item div {
+    cursor: pointer;
+}
+.todo-item .cross {
+    font-size: 1rem;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.todo-item .strike {
+    color: #b0b3cc;
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+.bottom-status {
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 5px 10px 0 var(--box-shadow);
+    padding: 1rem 1.5rem 1rem 2rem;
+    background-color: var(--card-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-color);
+}
+
+.select-options button {
+    font-weight: 700;
+}
+
+.tab-button {
+    background-color: transparent;
+    border: none;
+    color: #b0b3cc;
+    padding: 0 0.5rem;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    outline: none;
+}
+.active {
+    color: var(--active-btn);
+}
