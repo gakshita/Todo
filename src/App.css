@@ -40,30 +40,52 @@ form {
     color: var(--text-color);
     box-shadow: 0 5px 10px 0 var(--box-shadow);
     outline: none;
+    margin-bottom: 10px;
 }
 
 .todo-item {
     width: 100%;
     background-color: var(--card-color);
     color: var(--text-color);
-    padding: 1.2rem 1.5rem 1rem 3rem;
+    padding: 1.2rem 1.5rem 1rem;
     border-bottom: 1px solid var(--divider-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    /* align-items: center; */
     font-size: 1.1rem;
     text-transform: capitalize;
+    /* flex-direction: column; */
 }
 .todo-item div {
     cursor: pointer;
 }
-.todo-item .cross {
+.todo-item .top {
     font-size: 1rem;
-    opacity: 0.5;
+    /* opacity: 0.5; */
     cursor: pointer;
     transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: space-between;
 }
-
+.reactions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 20px 0 10px;
+}
+.reactions svg {
+    margin-right: 20px;
+}
+.title {
+    font-size: 1.5rem;
+}
+p {
+    text-align: initial;
+}
+h2 {
+    text-align: initial;
+    margin-bottom: 15px;
+}
 .todo-item .strike {
     color: #b0b3cc;
     text-decoration: line-through;
