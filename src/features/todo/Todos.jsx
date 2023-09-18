@@ -1,8 +1,9 @@
-import { useContext, useState } from "react";
-import TodoContext from "../context/TodoContext";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { toggleTodo, deleteTodo, clearCompletedTodo } from "./todoSlice";
 function Todos() {
-    const { todos, toggleTodo, deleteTodo, clearCompletedTodo } =
-        useContext(TodoContext);
+    const todos = useSelector((state) => state.todo.todos);
+    const dispatch = useDispatch();
     const [activeTab, setActiveTab] = useState(0);
 
     const getTodos = () => {
@@ -24,13 +25,13 @@ function Todos() {
                     <div className="todo-item" key={key}>
                         <div
                             className={`${todo.state != "active" && "strike"}`}
-                            onClick={() => toggleTodo(todo.id)}
+                            onClick={() => dispatch(toggleTodo(todo.id))}
                         >
                             <span>{todo.data}</span>
                         </div>
                         <div
                             className="cross"
-                            onClick={() => deleteTodo(todo.id)}
+                            onClick={() => dispatch(deleteTodo(todo.id))}
                         >
                             ✕
                         </div>
@@ -60,7 +61,10 @@ function Todos() {
                         Completed
                     </button>
                 </div>
-                <button className="tab-button" onClick={clearCompletedTodo}>
+                <button
+                    className="tab-button"
+                    onClick={() => dispatch(clearCompletedTodo())}
+                >
                     Clear Completed
                 </button>
             </div>

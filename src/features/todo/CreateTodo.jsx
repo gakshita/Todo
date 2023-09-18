@@ -1,12 +1,13 @@
-import { useContext, useState } from "react";
-import TodoContext from "../context/TodoContext";
+import { useState } from "react";
+import { addTodo } from "./todoSlice";
+import { useDispatch } from "react-redux";
 function CreateTodo() {
-    const { addTodo } = useContext(TodoContext);
     const [todo, setTodo] = useState("");
+    const dispatch = useDispatch();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        addTodo(todo);
+        dispatch(addTodo(todo));
         setTodo("");
     };
 
