@@ -56,9 +56,11 @@ form {
     text-transform: capitalize;
     /* flex-direction: column; */
 }
+
 .todo-item div {
     cursor: pointer;
 }
+
 .todo-item .top {
     font-size: 1rem;
     /* opacity: 0.5; */
